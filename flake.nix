@@ -38,5 +38,7 @@
             default = ghz;
           };
         }
-    );
+    ) // {
+      overlay = final: prev: { inherit (self.packages.${prev.stdenv.hostPlatform.system}) ghz; };
+    };
 }
